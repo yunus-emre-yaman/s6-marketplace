@@ -1,41 +1,47 @@
 import js from "@eslint/js";
-import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
+import prettier from "eslint-config-prettier/flat";
 
 export default [
-  { ignores: ["dist"] },
+  js.configs.recommended,
   {
-    files: ["**/*.{js,jsx}"],
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      ecmaVersion: "latest",
+      sourceType: "module",
       parserOptions: {
-        ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
-        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        fetch: "readonly",
+        document: "readonly",
+        __dirname: "readonly",
+        console: "readonly",
+        process: "readonly",
       },
     },
-
     plugins: {
+      react,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-      "react": react,
-    },
-    env: {
-      jest: true,
     },
     rules: {
-      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      "react/jsx-no-undef": "error",
-      "no-undef": "error",
-      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
+      // özel kurallar buraya
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+
+      // no-unused-vars'ı warning yap
+      "no-unused-vars": "warn",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
   },
+  prettier,
 ];
