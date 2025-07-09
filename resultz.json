@@ -1,21 +1,21 @@
 {
-  "stats": "0 passed, 12 failed out of 12",
+  "stats": "5 passed, 7 failed out of 12",
   "tests": [
     {
       "name": "App içinde activeCategory adında bir state tanımlanmış mı?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "App içindeki activeCategory state'inin başlangıç değeri 'electronics' mi?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "App içinde handleCatChange adında bir fonksiyon tanımlanmış mı?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "ProductList componentına activeCategory props'u gönderilmiş mi?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "ProductList activeCategory'yi props olarak alıyor mu?",
@@ -35,7 +35,7 @@
     },
     {
       "name": "Sidebar componentına hem handleCatChange hem activeCategory props'ları iletilmiş mi?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Sidebar içinde bir state tanımlanmış mı?",
