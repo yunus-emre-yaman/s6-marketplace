@@ -29,7 +29,7 @@ export default function Sidebar({ activeCategory, handleCatChange }) {
           key={index}
           category={category}
           isActive={category === activeCategory}
-          onClick={() => handleCatChange(category)}
+          handleCatChange={handleCatChange}
         />
       ))}
     </nav>
