@@ -1,5 +1,5 @@
 {
-  "stats": "5 passed, 7 failed out of 12",
+  "stats": "7 passed, 5 failed out of 12",
   "tests": [
     {
       "name": "App içinde activeCategory adında bir state tanımlanmış mı?",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Sidebar içinde bir state tanımlanmış mı?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Sidebar componenti kategorileri listeliyor mı?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Sidebar Category componentına gerekli propsları doğru isimlerle iletiyor mu?",
